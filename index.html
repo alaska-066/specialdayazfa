@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>azz lmao</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="birthday-gate">
+    <div class="gate-card">
+      <h3>🔒 Verification Required</h3>
+      <p>Enter your birthday to unlock your space:</p>
+      
+      <input type="text" id="birthdate-input" placeholder="DD/MM/YYYY" maxlength="10">
+      
+      <button id="unlock-btn">Unlock ✨</button>
+      <div id="error-message">Forgot your birthdayy?? BAAHAHAHAHHAHAH sorry it was a joke pls dont kill me</div>
+    </div>
+  </div>
+
+  <div id="cake-transition">
+    <div class="cake-wrapper">
+      <div class="candle">
+        <div class="flame" id="cake-flame"></div>
+      </div>
+      <div class="cake-layer layer-top"></div>
+      <div class="cake-layer layer-bottom"></div>
+      <h2 id="blow-text">Azfaaa Make a wish...</h2>
+    </div>
+  </div>
+
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-hidden="true"
+    class="background-video">
+    <source src="videos/sunflowers.mp4" type="video/mp4">
+  </video>
+
+<div id="petals-container" aria-hidden="true"></div>
+
+  <div class="page-wrapper">
+
+    <header>
+      <div class="header-content-wrapper">
+
+        <video autoplay muted loop playsinline class="header-mini-video left-video">
+          <source src="videos/cici.mp4" type="video/mp4">
+        </video>
+
+        <div class="header-text">
+          <h1>HAPPY BIRTHDAYYYY</h1>
+          <div class="sub">Azfa Hanan Hanifah</div>
+        </div>
+
+        <video autoplay muted loop playsinline class="header-mini-video right-video">
+          <source src="videos/cici.mp4" type="video/mp4">
+        </video>
+        
+      </div>
+    </header>
+
+    <div class="featured-card-wrapper reveal">
+      <div class="card featured-card">
+        <div class="bubbles bubbles-featured">
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+        </div>
+        <h3> Welcome </h3>
+        <p>Today is all about youuu. As you begin this new journey, I hope every beautiful thing finds you. Scroll down to tell me your wishes, see some memories, and listen to some songs I put together for your special dayy!</p>
+        <div class="signature">— made with <span class="strike-this">my grueling time</span> love by Laskara</div>
+      </div>
+    </div>
+
+    <main class="widgets-container reveal">
+      
+      <!-- kartu 1 -->
+<div class="card-link" id="open-wish-btn" style="cursor: pointer;">
+  <div
+    class="card clickable-card"
+    tabindex="0"
+    role="button">
+    <div class="bubbles bubbles-card-1">
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+    </div>
+    <h3>✨ A Special Wish</h3>
+    <p>After all my yap about your new journey, I hope I can be part of that journey with you. State your wish...</p>
+    <div class="click-hint">Write a wish ↗️</div>
+  </div>
+</div>
+
+
+      <!-- kartu 2 -->
+      <a href="sweetmem/index.html" class="card-link transition-link">
+        <div class="card clickable-card">
+          <div class="bubbles bubbles-card-2">
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+          </div>
+          <h3>📸 Sweet Memories</h3>
+          <p>It's not much, but your friends are also here...</p>
+          <div class="click-hint">Open gallery ↗️</div>
+        </div>
+      </a>
+
+      <!-- kartu 3 -->
+      <a href="https://open.spotify.com/playlist/1tT2HQpKBWAM8RQHKUKjFs?si=f00b3ecc9d1747d8" target="_blank" class="card-link">
+        <div class="card clickable-card">
+          <div class="bubbles bubbles-card-3">
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+          </div>
+          <h3>🎵 For You</h3>
+          <p>Songs that remind me of you...</p>
+          <div class="click-hint">Listen on Spotify ↗️</div>
+        </div>
+      </a>
+      
+    </main>
+
+    <div class="featured-card-wrapper reveal">
+
+    <div class="card scroll-reminder" id="scroll-to-letter">
+
+        <h3>🌻 One Last Thing</h3>
+
+        <p>
+            When you're done with these three, scroll down.
+        </p>
+
+        <div class="click-hint">
+            I have one last thing I'd like to tell you. 
+        </div>
+
+    </div>
+
+</div>
+
+    <section class="letter-section reveal" id="letter-section">
+
+    <div class="card letter-intro">
+
+    <div class="bubbles bubbles-letter">
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+    </div>
+
+    <h3>🌻 I saved the best for last.</h3>
+
+    <p id="seal-instruction">
+        Click the sunflower.
+    </p>
+
+</div>
+
+    <div class="seal-container">
+
+        <div class="seal" id="seal">
+            🌻
+        </div>
+
+    </div>
+
+    <!-- kartu -->
+    <div class="envelope" id="envelope">
+
+
+        <div class="envelope-back"></div>
+
+
+        <div class="letter-paper">
+    <div class="click-me-label">🌻 Click me 🌻</div>
+    <div id="letter-text"></div>
+</div>
+
+
+        <div class="fold-left"></div>
+
+
+        <div class="fold-right"></div>
+
+
+        <div class="fold-bottom"></div>
+
+
+        <div class="envelope-flap"></div>
+
+    </div>
+
+  </section>
+
+  </div>
+
+<div id="wish-modal" class="wish-modal">
+  <div class="wish-modal-content">
+    <span class="close-wish">&times;</span>
+    <h3>✨ Make Your Wish ✨</h3>
+    <p>Write down anything you want for your new journey...</p>
+    
+    <textarea id="wish-textarea" placeholder="Type your wishes here, Azfa... 🌻&#10;Don't ask for Childe to be real tho" rows="5"></textarea>
+    
+    <button id="submit-wish-btn">Send to the Stars 🚀</button>
+    <div id="wish-status-message"></div>
+  </div>
+</div>
+
+<div id="page-cover">
+    <div class="cover-title">
+        📸 Sweet Memories
+    </div>
+</div>
+
+<div id="letter-lightbox" class="letter-lightbox">
+
+    <span class="close-letter">&times;</span>
+
+    <div class="letter-lightbox-paper">
+
+        <div id="letter-lightbox-content"></div>
+
+    </div>
+
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
