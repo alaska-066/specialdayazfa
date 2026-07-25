@@ -16,6 +16,7 @@ card.style.setProperty("--xOffset", `${xOffset}px`);
 });
 
   const lightbox = document.getElementById("lightbox");
+  const lightboxVideo = document.getElementById("lightbox-video");
   const lightboxImg = document.getElementById("lightbox-img");
   const lightboxCaption = document.getElementById("lightbox-caption");
   const closeLightbox = document.querySelector(".close-lightbox");
@@ -26,24 +27,50 @@ card.style.setProperty("--xOffset", `${xOffset}px`);
   let currentIndex = 0;
   let currentGallery = [];
 
-  function showImage(index){
+  function showImage(index) {
 
-  const item = currentGallery[index];
+    lightboxVideo.pause();
 
-  const img = item.querySelector(".gallery-img");
+    const item = currentGallery[index];
 
-  const caption = item.querySelector('[class^="img-caption"]');
+    const img = item.querySelector(".gallery-img");
+    const video = item.querySelector(".gallery-video");
 
-  lightboxImg.src = img.src;
-  lightboxCaption.textContent = caption ? caption.textContent : "";
+    const caption = item.querySelector('[class^="img-caption"]');
 
-  currentIndex = index;
+    // Hide both first
+    lightboxImg.style.display = "none";
+    lightboxVideo.style.display = "none";
 
-  lightboxCounter.textContent =
-      `${index + 1} / ${currentGallery.length}`;
+    // Stop previous video
+    lightboxVideo.pause();
+    lightboxVideo.removeAttribute("src");
+    lightboxVideo.load();
 
-  prevBtn.disabled = currentIndex === 0;
-  nextBtn.disabled = currentIndex === currentGallery.length - 1;
+    if (img) {
+
+        lightboxImg.src = img.src;
+        lightboxImg.style.display = "block";
+
+    }
+
+    if (video) {
+
+        lightboxVideo.src = video.currentSrc || video.src;
+        lightboxVideo.style.display = "block";
+
+    }
+
+    lightboxCaption.textContent =
+        caption ? caption.textContent : "";
+
+    currentIndex = index;
+
+    lightboxCounter.textContent =
+        `${index + 1} / ${currentGallery.length}`;
+
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex === currentGallery.length - 1;
 }
 
   galleryItems.forEach(item => {
@@ -68,6 +95,8 @@ card.style.setProperty("--xOffset", `${xOffset}px`);
 
   closeLightbox.addEventListener("click", () => {
     lightbox.classList.remove("show");
+
+lightboxVideo.pause();
   });
 
   prevBtn.addEventListener("click", () => {
@@ -106,6 +135,7 @@ nextBtn.addEventListener("click", () => {
 
     if (e.key === "Escape") {
         lightbox.classList.remove("show");
+        lightboxVideo.pause();
     }
 
     if (e.key === "ArrowLeft" && currentIndex > 0) {
